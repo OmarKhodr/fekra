@@ -13,6 +13,7 @@ class TextViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        view.backgroundColor = .systemBackground
         configureTextView()
     }
     
