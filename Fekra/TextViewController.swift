@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TextViewController.swift
 //  Fekra
 //
 //  Created by Omar Khodr on 2/4/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TextViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,6 @@ class ViewController: UIViewController {
         
     }
 
-
+    
 }
 

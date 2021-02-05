@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2371C2B025CC71BF00680FF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2AF25CC71BF00680FF0 /* AppDelegate.swift */; };
 		2371C2B225CC71BF00680FF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2B125CC71BF00680FF0 /* SceneDelegate.swift */; };
-		2371C2B425CC71BF00680FF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2B325CC71BF00680FF0 /* ViewController.swift */; };
+		2371C2B425CC71BF00680FF0 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2B325CC71BF00680FF0 /* TextViewController.swift */; };
 		2371C2B925CC71C000680FF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2371C2B825CC71C000680FF0 /* Assets.xcassets */; };
 		2371C2BC25CC71C000680FF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2371C2BA25CC71C000680FF0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		2371C2AC25CC71BF00680FF0 /* Fekra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fekra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2371C2AF25CC71BF00680FF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2371C2B125CC71BF00680FF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2371C2B325CC71BF00680FF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2371C2B325CC71BF00680FF0 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		2371C2B825CC71C000680FF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2371C2BB25CC71C000680FF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2371C2BD25CC71C000680FF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 				2371C2C425CC71E700680FF0 /* Fekra.entitlements */,
 				2371C2AF25CC71BF00680FF0 /* AppDelegate.swift */,
 				2371C2B125CC71BF00680FF0 /* SceneDelegate.swift */,
-				2371C2B325CC71BF00680FF0 /* ViewController.swift */,
+				2371C2B325CC71BF00680FF0 /* TextViewController.swift */,
 				2371C2B825CC71C000680FF0 /* Assets.xcassets */,
 				2371C2BA25CC71C000680FF0 /* LaunchScreen.storyboard */,
 				2371C2BD25CC71C000680FF0 /* Info.plist */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2371C2B425CC71BF00680FF0 /* ViewController.swift in Sources */,
+				2371C2B425CC71BF00680FF0 /* TextViewController.swift in Sources */,
 				2371C2B025CC71BF00680FF0 /* AppDelegate.swift in Sources */,
 				2371C2B225CC71BF00680FF0 /* SceneDelegate.swift in Sources */,
 			);
