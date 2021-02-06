@@ -52,7 +52,20 @@ extension TextViewController {
 
 // MARK: Collection View Compositional Layout
 extension TextViewController {
+    // Create compositional layout
     private func createLayout() -> UICollectionViewCompositionalLayout {
+        let layout = UICollectionViewCompositionalLayout(sectionProvider: createSection(sectionIndex:layoutEnvironment:))
+        return layout
+    }
+    
+    // Given a section index, provides the appropriate section to the layout
+    private func createSection(sectionIndex: Int,
+                               layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
+        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        configuration.showsSeparators = false
+        configuration.headerMode = .none
         
+        let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
+        return section
     }
 }
