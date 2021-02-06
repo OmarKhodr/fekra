@@ -18,11 +18,13 @@ class TextViewController: UIViewController {
         let text: String
     }
     
-    var collectionView: UICollectionView!
+    private var collectionView: UICollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, TextBlock>!
     
     override func loadView() {
         super.loadView()
         configureHierarchy()
+        configureDataSource()
     }
 
     override func viewDidLoad() {
@@ -50,7 +52,7 @@ extension TextViewController {
     }
 }
 
-// MARK: Collection View Compositional Layout
+// MARK: Compositional Layout
 extension TextViewController {
     // Create compositional layout
     private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -67,5 +69,12 @@ extension TextViewController {
         
         let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         return section
+    }
+}
+
+// MARK: Data Source
+extension TextViewController {
+    private func configureDataSource() {
+        
     }
 }
