@@ -9,6 +9,15 @@ import UIKit
 
 class TextViewController: UIViewController {
     
+    private enum Section: Int {
+        case main
+    }
+    
+    private struct TextBlock: Hashable, Identifiable {
+        let id: UUID = UUID()
+        let text: String
+    }
+    
     var collectionView: UICollectionView!
     
     override func loadView() {
