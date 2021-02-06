@@ -1,5 +1,5 @@
 //
-//  TextViewController.swift
+//  TextBlockViewController.swift
 //  Fekra
 //
 //  Created by Omar Khodr on 2/4/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TextViewController: UIViewController {
+class TextBlockViewController: UIViewController {
     
     let textView = UITextView()
     
@@ -19,7 +19,7 @@ class TextViewController: UIViewController {
     
 }
 
-extension TextViewController {
+extension TextBlockViewController {
     private func configureTextView() {
         // Do not create constraints automatically from autoresizing mask, set them up manually
         textView.translatesAutoresizingMaskIntoConstraints = false
