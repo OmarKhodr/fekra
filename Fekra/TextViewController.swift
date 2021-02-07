@@ -9,28 +9,19 @@ import UIKit
 
 class TextViewController: UIViewController {
     
+    private var selectedBlock: Int = 0
+    
     private enum Section: Int {
         case main
     }
     
-    private struct TextBlock: Hashable, Identifiable {
-        let id: UUID = UUID()
-        let text: String
-    }
-    
-    private var collectionView: UICollectionView!
-    private var dataSource: UICollectionViewDiffableDataSource<Section, TextBlock>!
+    private var tableView: UITableView!
+    private var dataSource: UITableViewDiffableDataSource<Section, TextBlock>!
     
     override func loadView() {
         super.loadView()
         configureHierarchy()
         configureDataSource()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
 }
@@ -39,42 +30,76 @@ class TextViewController: UIViewController {
 // MARK: Hierarchy
 extension TextViewController {
     private func configureHierarchy() {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        configureNavItem()
         
-        view.addSubview(collectionView)
+        tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(TextBlockCell.self, forCellReuseIdentifier: TextBlockCell.reuseIdentifier)
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .systemBlue
+        
+        view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
-}
-
-// MARK: Compositional Layout
-extension TextViewController {
-    // Create compositional layout
-    private func createLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout(sectionProvider: createSection(sectionIndex:layoutEnvironment:))
-        return layout
-    }
     
-    // Given a section index, provides the appropriate section to the layout
-    private func createSection(sectionIndex: Int,
-                               layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? {
-        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-        configuration.showsSeparators = false
-        configuration.headerMode = .none
-        
-        let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
-        return section
+    private func configureNavItem() {
+        view.backgroundColor = .systemBackground
+        navigationItem.title = "Fekra"
     }
 }
 
 // MARK: Data Source
 extension TextViewController {
     private func configureDataSource() {
+        dataSource = UITableViewDiffableDataSource<Section, TextBlock>(tableView: tableView, cellProvider: {
+            (tableView, indexPath, textBlock) -> UITableViewCell? in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextBlockCell.reuseIdentifier,
+                                                           for: indexPath) as? TextBlockCell else {
+                fatalError("Wrong cell/reuse identifier!!!")
+            }
+            
+            cell.textBlockView.text = textBlock.text
+            cell.textBlockView.delegate = self
+            return cell
+        })
         
+        applySnapshot()
+    }
+    
+    private func applySnapshot() {
+        var currentSnapshot = NSDiffableDataSourceSnapshot<Section, TextBlock>()
+        
+        currentSnapshot.appendSections([.main])
+        currentSnapshot.appendItems(TextBlock.data)
+        
+        dataSource.apply(currentSnapshot, animatingDifferences: false)
+    }
+}
+
+// MARK: Delegate
+extension TextViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0 // You can set any other value, it's up to you
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected!")
+    }
+}
+
+// MARK: TextView Delegate
+extension TextViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        
+//        applySnapshot()
     }
 }

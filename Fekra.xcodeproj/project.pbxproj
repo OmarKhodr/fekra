@@ -8,19 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		231391A525CE637000002865 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231391A425CE637000002865 /* TextViewController.swift */; };
+		231391AD25CE777700002865 /* TextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231391AC25CE777700002865 /* TextBlock.swift */; };
+		231391B125CE7F3300002865 /* TextBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231391B025CE7F3300002865 /* TextBlockView.swift */; };
 		2371C2B025CC71BF00680FF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2AF25CC71BF00680FF0 /* AppDelegate.swift */; };
 		2371C2B225CC71BF00680FF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2B125CC71BF00680FF0 /* SceneDelegate.swift */; };
-		2371C2B425CC71BF00680FF0 /* TextBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2B325CC71BF00680FF0 /* TextBlockViewController.swift */; };
+		2371C2B425CC71BF00680FF0 /* TextBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371C2B325CC71BF00680FF0 /* TextBlockCell.swift */; };
 		2371C2B925CC71C000680FF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2371C2B825CC71C000680FF0 /* Assets.xcassets */; };
 		2371C2BC25CC71C000680FF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2371C2BA25CC71C000680FF0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		231391A425CE637000002865 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		231391AC25CE777700002865 /* TextBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlock.swift; sourceTree = "<group>"; };
+		231391B025CE7F3300002865 /* TextBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlockView.swift; sourceTree = "<group>"; };
 		2371C2AC25CC71BF00680FF0 /* Fekra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fekra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2371C2AF25CC71BF00680FF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2371C2B125CC71BF00680FF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2371C2B325CC71BF00680FF0 /* TextBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlockViewController.swift; sourceTree = "<group>"; };
+		2371C2B325CC71BF00680FF0 /* TextBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlockCell.swift; sourceTree = "<group>"; };
 		2371C2B825CC71C000680FF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2371C2BB25CC71C000680FF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2371C2BD25CC71C000680FF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +65,9 @@
 				2371C2AF25CC71BF00680FF0 /* AppDelegate.swift */,
 				2371C2B125CC71BF00680FF0 /* SceneDelegate.swift */,
 				231391A425CE637000002865 /* TextViewController.swift */,
-				2371C2B325CC71BF00680FF0 /* TextBlockViewController.swift */,
+				231391B025CE7F3300002865 /* TextBlockView.swift */,
+				2371C2B325CC71BF00680FF0 /* TextBlockCell.swift */,
+				231391AC25CE777700002865 /* TextBlock.swift */,
 				2371C2B825CC71C000680FF0 /* Assets.xcassets */,
 				2371C2BA25CC71C000680FF0 /* LaunchScreen.storyboard */,
 				2371C2BD25CC71C000680FF0 /* Info.plist */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2371C2B425CC71BF00680FF0 /* TextBlockViewController.swift in Sources */,
+				2371C2B425CC71BF00680FF0 /* TextBlockCell.swift in Sources */,
 				2371C2B025CC71BF00680FF0 /* AppDelegate.swift in Sources */,
+				231391AD25CE777700002865 /* TextBlock.swift in Sources */,
+				231391B125CE7F3300002865 /* TextBlockView.swift in Sources */,
 				2371C2B225CC71BF00680FF0 /* SceneDelegate.swift in Sources */,
 				231391A525CE637000002865 /* TextViewController.swift in Sources */,
 			);
