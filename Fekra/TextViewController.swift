@@ -50,6 +50,14 @@ extension TextViewController {
     private func configureNavItem() {
         view.backgroundColor = .systemBackground
         navigationItem.title = "Fekra"
+        
+        let reloadButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadTapped))
+        reloadButton.tintColor = .link
+        navigationItem.rightBarButtonItem = reloadButton
+    }
+    
+    @objc private func reloadTapped() {
+        applySnapshot()
     }
 }
 
